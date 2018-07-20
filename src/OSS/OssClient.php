@@ -1289,7 +1289,7 @@ class OssClient
             $options[self::OSS_HEADERS] = array(self::OSS_OBJECT_COPY_SOURCE => '/' . $fromBucket . '/' . $fromObject);
         }
         $response = $this->auth($options);
-        $result = new HeaderResult($response);
+        $result = new PutSetDeleteResult($response);
         return $result->getData();
     }
 
